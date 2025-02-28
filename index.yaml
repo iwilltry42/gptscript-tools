@@ -53,6 +53,8 @@ tools:
     reference: ./tasks
   threads:
     reference: ./threads
+  telegram:
+    reference: ./telegram
   projects:
     reference: ./projects
   knowledge:
