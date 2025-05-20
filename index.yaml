@@ -123,6 +123,8 @@ modelProviders:
     reference: ./deepseek-model-provider
   generic-openai-model-provider:
     reference: ./generic-openai-model-provider
+  kubeai-model-provider:
+    reference: ./kubeai-model-provider
 
 authProviders:
   github-auth-provider:

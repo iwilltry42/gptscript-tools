@@ -1,0 +1,30 @@
+Name: KubeAI Model Provider
+Description: Model Provider for KubeAI models with OpenAI API compatibility
+Model Provider: true
+Credential: ../placeholder-credential as kubeai-model-provider with OBOT_KUBEAI_MODEL_PROVIDER_ENDPOINT as env_vars
+Metadata: noUserAuth: kubeai-model-provider
+
+#!sys.daemon ${GPTSCRIPT_TOOL_DIR}/bin/gptscript-go-tool
+
+---
+!metadata:KubeAI Model Provider:providerMeta
+{
+    "icon": "/admin/assets/obot_openai_antenna_icon.png",
+    "iconDark": "/admin/assets/obot_openai_antenna_icon.png",
+    "link": "https://platform.openai.com/docs/api-reference/introduction",
+    "description": "Model Provider for KubeAI with OpenAI API compatibility.",
+    "envVars": [
+        {
+            "name": "OBOT_KUBEAI_MODEL_PROVIDER_ENDPOINT",
+            "friendlyName": "Endpoint URL",
+            "description": "Endpoint URL for the KubeAI API, e.g. http://kubeai.kubeai.svc.cluster.local/openai/v1",
+            "sensitive": false
+        }
+    ]
+}
+
+---
+Name: validate
+Description: Validate the KubeAI API configuration
+
+#!${GPTSCRIPT_TOOL_DIR}/bin/gptscript-go-tool validate
